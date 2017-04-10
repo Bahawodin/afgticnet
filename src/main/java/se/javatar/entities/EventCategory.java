@@ -4,13 +4,15 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
  * @author Ajmal Bahawodin {@literal <mailto:bahawodin@gmail.com/>}
  */
+@SuppressWarnings("serial")
 @Entity
-public class EventCategory {
+public class EventCategory implements Serializable{
 
     /**
      * The ID of the event category object
