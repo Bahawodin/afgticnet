@@ -28,6 +28,12 @@ public class Event {
      */
     private String description;
 
+    //TODO should we have ManyToOne
+    /**
+     * The category for this event
+     */
+    private EventCategory eventCategory;
+
     /**
      * Default empty constructor
      */
@@ -36,15 +42,15 @@ public class Event {
 
     /**
      * Constructor for creating the object with params
-     * @param name
-     * @param description
+     * @param name of the event
+     * @param description of the event
      */
     public Event(String name, String description) {
         this.name = name;
         this.description = description;
     }
 
-    //The following is the boilerplate setter and getters
+    //The following is the boilerplate getters and setter
 
     /**
      * Getter for ID
@@ -87,13 +93,28 @@ public class Event {
     }
 
     /**
+     * Get the event category
+     * @return
+     */
+    public EventCategory getEventCategory() {
+        return eventCategory;
+    }
+
+    /**
+     * Set the event category
+     * @param eventCategory
+     */
+    public void setEventCategory(EventCategory eventCategory) {
+        this.eventCategory = eventCategory;
+    }
+
+    /**
      * The toString
      * @return event id, name, and description
      */
     @Override
     public String toString() {
         return "Event{" +
-                "id=" + id +
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 '}';
