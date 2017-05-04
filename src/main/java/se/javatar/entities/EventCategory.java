@@ -14,16 +14,11 @@ import java.util.Objects;
 @Entity
 public class EventCategory implements Serializable{
 
-    /**
-     * The ID of the event category object
-     */
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    /**
-     * Description for the category
-     */
     private String description;
 
     /**

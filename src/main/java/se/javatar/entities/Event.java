@@ -13,27 +13,16 @@ import java.io.Serializable;
 @Entity
 public class Event implements Serializable {
 
-    /**
-     * The ID of the event object
-     */
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    /**
-     * The name of the event
-     */
     private String name;
 
-    /**
-     * A description of the event
-     */
     private String description;
 
     //TODO should we have ManyToOne
-    /**
-     * The category for this event
-     */
     private EventCategory eventCategory;
 
     /**
