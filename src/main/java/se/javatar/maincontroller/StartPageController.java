@@ -4,9 +4,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * @author Ajmal Bahawodin {@literal <mailto:bahawodin@gmail.com/>}
+ * @author Ajmal Bahawodin {@literal <mailto:ajmal@javatar.se/>}
  */
-
 @RestController
 public class StartPageController {
 

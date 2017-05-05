@@ -8,7 +8,7 @@ import java.io.Serializable;
 import java.util.Objects;
 
 /**
- * @author Ajmal Bahawodin {@literal <mailto:bahawodin@gmail.com/>}
+ * @author Ajmal Bahawodin {@literal <mailto:ajmal@javatar.se/>}
  */
 @SuppressWarnings("serial")
 @Entity
