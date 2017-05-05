@@ -20,7 +20,6 @@ public class MediaItem implements Serializable{
     @Enumerated(EnumType.STRING)
     private MediaType mediaType;
 
-    @Column(unique = true)
     @URL
     private String url;
 
