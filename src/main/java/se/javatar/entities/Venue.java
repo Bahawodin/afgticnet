@@ -59,4 +59,14 @@ public class Venue implements Serializable{
     public void setAddress(Address address) {
         this.address = address;
     }
+
+    @Override
+    public String toString() {
+        return "Venue{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", address=" + address +
+                '}';
+    }
 }

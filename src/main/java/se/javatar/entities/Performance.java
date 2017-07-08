@@ -58,4 +58,13 @@ public class Performance implements Serializable{
     public void setShow(Show show) {
         this.show = show;
     }
+
+    @Override
+    public String toString() {
+        return "Performance{" +
+                "id=" + id +
+                ", date=" + date +
+                ", show=" + show +
+                '}';
+    }
 }

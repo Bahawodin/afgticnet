@@ -1,6 +1,7 @@
 package se.javatar.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -26,7 +27,10 @@ public class ShowController {
     }
 
     @RequestMapping(value = "/add-show", method = RequestMethod.POST)
-    public void addShow(Show show) {
+    public void addShow(@RequestBody Show show) {
+
+        System.out.println(show);
+
         showService.addShow(show);
     }
 

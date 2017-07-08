@@ -3,11 +3,13 @@ package se.javatar.entities;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
 import static java.util.logging.Level.ALL;
 import static javax.persistence.FetchType.EAGER;
+import static javax.persistence.TemporalType.TIMESTAMP;
 
 /**
  * @author Ajmal Bahawodin {@literal <mailto:ajmal@javatar.se/>}
@@ -29,17 +31,16 @@ public class Show implements Serializable {
     //@NotNull
     private Venue venue;
 
-    @OneToMany(fetch = EAGER, mappedBy = "show", cascade = CascadeType.ALL)
-    @OrderBy("date")
-    private Set<Performance> performances = new HashSet<Performance>();
+    @Temporal(TIMESTAMP)
+    //@NotNull
+    private Date date;
 
     public Show() {
     }
 
-    public Show(Event event, Venue venue, Set<Performance> performances) {
+    public Show(Event event, Venue venue) {
         this.event = event;
         this.venue = venue;
-        this.performances = performances;
     }
 
     public Long getId() {
@@ -62,11 +63,13 @@ public class Show implements Serializable {
         this.venue = venue;
     }
 
-    public Set<Performance> getPerformances() {
-        return performances;
-    }
-
-    public void setPerformances(Set<Performance> performances) {
-        this.performances = performances;
+    @Override
+    public String toString() {
+        return "Show{" +
+                "id=" + id +
+                ", event=" + event +
+                ", venue=" + venue +
+                ", date=" + date +
+                '}';
     }
 }

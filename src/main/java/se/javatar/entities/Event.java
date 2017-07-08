@@ -2,6 +2,10 @@ package se.javatar.entities;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
+
+import static javax.persistence.FetchType.EAGER;
 
 /**
  * @author Ajmal Bahawodin {@literal <mailto:ajmal@javatar.se/>}
@@ -20,6 +24,10 @@ public class Event implements Serializable {
     private String description;
 
     private EventCategory eventCategory;
+
+    @OneToMany(fetch = EAGER, mappedBy = "event", cascade = CascadeType.ALL)
+    @OrderBy("date")
+    private Set<Show> shows = new HashSet<Show>();
 
     /**
      * Default empty constructor
