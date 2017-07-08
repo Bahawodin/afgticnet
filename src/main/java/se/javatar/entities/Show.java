@@ -1,15 +1,14 @@
 package se.javatar.entities;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
 /**
  * @author Ajmal Bahawodin {@literal <mailto:ajmal@javatar.se/>}
  */
+@Entity
+@Table(name="Appearance", uniqueConstraints = @UniqueConstraint(columnNames = { "event_id", "venue_id" }))
 public class Show implements Serializable {
 
     @Id
