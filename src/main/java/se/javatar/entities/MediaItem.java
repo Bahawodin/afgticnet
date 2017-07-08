@@ -1,7 +1,7 @@
 package se.javatar.entities;
 
 import org.hibernate.validator.constraints.URL;
-import se.javatar.domain.MediaType;
+import se.javatar.domain.objects.MediaType;
 
 import javax.persistence.*;
 import java.io.Serializable;

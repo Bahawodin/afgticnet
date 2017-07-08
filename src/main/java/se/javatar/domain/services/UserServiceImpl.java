@@ -1,4 +1,4 @@
-package se.javatar.domain.service;
+package se.javatar.domain.services;
 
 /**
  * @author Ajmal Bahawodin {@literal <mailto:ajmal@javatar.se/>}
