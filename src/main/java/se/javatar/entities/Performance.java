@@ -10,6 +10,7 @@ import static javax.persistence.TemporalType.TIMESTAMP;
 /**
  * @author Ajmal Bahawodin {@literal <mailto:ajmal@javatar.se/>}
  */
+@SuppressWarnings("serial")
 @Entity
 @Table(uniqueConstraints = @UniqueConstraint(columnNames = { "date", "show_id" }))
 public class Performance implements Serializable{
@@ -19,11 +20,11 @@ public class Performance implements Serializable{
     private Long id;
 
     @Temporal(TIMESTAMP)
-    @NotNull
+    //@NotNull
     private Date date;
 
     @ManyToOne
-    @NotNull
+    //@NotNull
     private Show show;
 
     public Performance() {

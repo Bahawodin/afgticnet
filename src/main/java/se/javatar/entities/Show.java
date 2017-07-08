@@ -12,6 +12,7 @@ import static javax.persistence.FetchType.EAGER;
 /**
  * @author Ajmal Bahawodin {@literal <mailto:ajmal@javatar.se/>}
  */
+@SuppressWarnings("serial")
 @Entity
 @Table(name="Appearance", uniqueConstraints = @UniqueConstraint(columnNames = { "event_id", "venue_id" }))
 public class Show implements Serializable {
@@ -21,11 +22,11 @@ public class Show implements Serializable {
     private Long id;
 
     @ManyToOne
-    @NotNull
+    //@NotNull
     private Event event;
 
     @ManyToOne
-    @NotNull
+    //@NotNull
     private Venue venue;
 
     @OneToMany(fetch = EAGER, mappedBy = "show", cascade = CascadeType.ALL)
@@ -43,10 +44,6 @@ public class Show implements Serializable {
 
     public Long getId() {
         return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public Event getEvent() {

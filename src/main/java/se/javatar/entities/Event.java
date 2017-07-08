@@ -2,11 +2,11 @@ package se.javatar.entities;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.List;
 
 /**
  * @author Ajmal Bahawodin {@literal <mailto:ajmal@javatar.se/>}
  */
+@SuppressWarnings("serial")
 @Entity
 public class Event implements Serializable {
 

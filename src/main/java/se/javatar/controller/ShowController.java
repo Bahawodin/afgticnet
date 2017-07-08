@@ -2,11 +2,13 @@ package se.javatar.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import se.javatar.entities.Show;
 import se.javatar.service.ShowService;
-
 import java.util.List;
+
+import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
 /**
  * @author Ajmal Bahawodin {@literal <mailto:ajmal@javatar.se/>}
@@ -18,12 +20,12 @@ public class ShowController {
     @Autowired
     ShowService showService;
 
-    @RequestMapping("/getAllShows")
+    @RequestMapping(value = "/get-all-shows")
     public List<Show> getAllShows() {
         return showService.getAllShows();
     }
 
-    @RequestMapping("/addShow")
+    @RequestMapping(value = "/add-show", method = RequestMethod.POST)
     public void addShow(Show show) {
         showService.addShow(show);
     }
