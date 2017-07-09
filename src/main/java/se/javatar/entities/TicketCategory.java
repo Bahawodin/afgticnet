@@ -8,10 +8,12 @@ import java.io.Serializable;
  */
 @SuppressWarnings("serial")
 @Entity
+@Table(name = "ticketCategory")
 public class TicketCategory implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "ticketCategory_id")
     private Long id;
 
     @Column(unique = true)

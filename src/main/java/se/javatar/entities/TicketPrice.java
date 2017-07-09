@@ -3,6 +3,7 @@ package se.javatar.entities;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 /**
  * @author Ajmal Bahawodin {@literal <mailto:ajmal@javatar.se/>}
@@ -11,7 +12,7 @@ import javax.persistence.*;
 @Entity
 // TODO Document @JsonIgnoreProperties
 @JsonIgnoreProperties("show")
-@Table(uniqueConstraints = @UniqueConstraint(columnNames = { "section_id", "show_id", "ticketcategory_id" }))
+@Table(uniqueConstraints = @UniqueConstraint(columnNames = { "section_id", "show_id", /*"ticketCategory_id"*/ }))
 public class TicketPrice {
 
     @Id
@@ -19,15 +20,15 @@ public class TicketPrice {
     private Long id;
 
     @ManyToOne
-    //@NotNull
+    @NotNull
     private Show show;
 
     @ManyToOne
-    //@NotNull
+    @NotNull
     private Section section;
 
     @ManyToOne
-    //@NotNull
+    @NotNull
     private TicketCategory ticketCategory;
 
     /**

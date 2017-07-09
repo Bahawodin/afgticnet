@@ -1,11 +1,10 @@
 package se.javatar.entities;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Set;
-
-import static javax.persistence.FetchType.EAGER;
 
 /**
  * @author Ajmal Bahawodin {@literal <mailto:ajmal@javatar.se/>}
@@ -24,10 +23,6 @@ public class Event implements Serializable {
     private String description;
 
     private EventCategory eventCategory;
-
-    @OneToMany(fetch = EAGER, mappedBy = "event", cascade = CascadeType.ALL)
-    @OrderBy("date")
-    private Set<Show> shows = new HashSet<Show>();
 
     /**
      * Default empty constructor
@@ -103,23 +98,13 @@ public class Event implements Serializable {
         this.eventCategory = eventCategory;
     }
 
-    public Set<Show> getShows() {
-        return shows;
-    }
-
-    public void setShows(Set<Show> shows) {
-        this.shows = shows;
-    }
-
-    /**
-     * The toString
-     * @return event id, name, and description
-     */
     @Override
     public String toString() {
         return "Event{" +
+                "id=" + id +
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
+                ", eventCategory=" + eventCategory +
                 '}';
     }
 }

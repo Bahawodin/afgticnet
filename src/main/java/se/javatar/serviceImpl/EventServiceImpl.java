@@ -1,6 +1,7 @@
 package se.javatar.serviceImpl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import se.javatar.dao.EventDao;
 import se.javatar.entities.Event;
 import se.javatar.service.EventService;
@@ -11,6 +12,7 @@ import java.util.List;
 /**
  * @author Ajmal Bahawodin {@literal <mailto:ajmal@javatar.se/>}
  */
+@Service
 public class EventServiceImpl implements EventService{
 
     @Autowired
