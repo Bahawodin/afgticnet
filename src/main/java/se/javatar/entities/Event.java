@@ -103,6 +103,14 @@ public class Event implements Serializable {
         this.eventCategory = eventCategory;
     }
 
+    public Set<Show> getShows() {
+        return shows;
+    }
+
+    public void setShows(Set<Show> shows) {
+        this.shows = shows;
+    }
+
     /**
      * The toString
      * @return event id, name, and description

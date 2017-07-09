@@ -1,13 +1,11 @@
 package se.javatar.entities;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
-import static java.util.logging.Level.ALL;
 import static javax.persistence.FetchType.EAGER;
 import static javax.persistence.TemporalType.TIMESTAMP;
 
@@ -35,6 +33,9 @@ public class Show implements Serializable {
     //@NotNull
     private Date date;
 
+    @OneToMany(mappedBy = "show", cascade = CascadeType.ALL, fetch = EAGER)
+    private Set<TicketPrice> ticketPrices = new HashSet<TicketPrice>();
+
     public Show() {
     }
 
@@ -61,6 +62,22 @@ public class Show implements Serializable {
 
     public void setVenue(Venue venue) {
         this.venue = venue;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public Set<TicketPrice> getTicketPrices() {
+        return ticketPrices;
+    }
+
+    public void setTicketPrices(Set<TicketPrice> ticketPrices) {
+        this.ticketPrices = ticketPrices;
     }
 
     @Override
