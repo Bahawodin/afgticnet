@@ -1,9 +1,6 @@
 package se.javatar.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
 
 /**
@@ -14,12 +11,15 @@ import java.io.Serializable;
 public class Venue implements Serializable{
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     private String name;
 
     private String description;
+
+    @ManyToOne
+    private MediaItem mediaItem;
 
     private Address address;
 

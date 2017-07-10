@@ -20,6 +20,9 @@ public class Event implements Serializable {
 
     private String description;
 
+    @ManyToOne
+    private MediaItem mediaItem;
+
     @Enumerated(EnumType.STRING)
     private EventCategory eventCategory;
 
@@ -84,18 +87,18 @@ public class Event implements Serializable {
         this.description = description;
     }
 
-    /**
-     * Get the event category
-     * @return
-     */
+    public MediaItem getMediaItem() {
+        return mediaItem;
+    }
+
+    public void setMediaItem(MediaItem mediaItem) {
+        this.mediaItem = mediaItem;
+    }
+
     public EventCategory getEventCategory() {
         return eventCategory;
     }
 
-    /**
-     * Set the event category
-     * @param eventCategory
-     */
     public void setEventCategory(EventCategory eventCategory) {
         this.eventCategory = eventCategory;
     }

@@ -29,6 +29,9 @@ public class Show implements Serializable {
     //@NotNull
     private Venue venue;
 
+    @ManyToOne
+    private MediaItem mediaItem;
+
     @Temporal(TIMESTAMP)
     //@NotNull
     private Date date;
@@ -62,6 +65,14 @@ public class Show implements Serializable {
 
     public void setVenue(Venue venue) {
         this.venue = venue;
+    }
+
+    public MediaItem getMediaItem() {
+        return mediaItem;
+    }
+
+    public void setMediaItem(MediaItem mediaItem) {
+        this.mediaItem = mediaItem;
     }
 
     public Date getDate() {

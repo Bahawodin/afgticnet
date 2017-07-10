@@ -1,5 +1,6 @@
 package se.javatar.controller;
 
+import com.fasterxml.jackson.databind.JsonNode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,10 +27,12 @@ public class EventController {
     }
 
     @RequestMapping(value = "/add-event", method = RequestMethod.POST)
-    public void addShow(@RequestBody Event event) {
+    public void addShow(@RequestBody JsonNode event) {
 
-        System.out.println(event);
+        event.forEach(e -> System.out.println(e.toString()));
 
-        eventService.addEvent(event);
+        //System.out.println(event);
+
+        //eventService.addEvent(event);
     }
 }

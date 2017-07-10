@@ -6,7 +6,8 @@ package se.javatar.domain.objects;
 public enum MediaType {
 
     IMAGE("Image", true),
-    VIDEO("Video", false);
+    VIDEO("Video", false),
+    AUDIO("Audio", false);
 
     /**
      * A human readable description of the media type.
