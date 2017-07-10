@@ -1,9 +1,7 @@
 package se.javatar.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import se.javatar.domain.objects.EventCategory;
+import javax.persistence.*;
 import java.io.Serializable;
 
 /**
@@ -22,7 +20,11 @@ public class Event implements Serializable {
 
     private String description;
 
+    @Enumerated(EnumType.STRING)
     private EventCategory eventCategory;
+
+
+
 
     /**
      * Default empty constructor
