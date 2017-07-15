@@ -11,7 +11,7 @@ import java.io.Serializable;
  */
 @SuppressWarnings("serial")
 @Entity
-public class Section implements Serializable{
+public class SectionEntity implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -21,10 +21,10 @@ public class Section implements Serializable{
 
     private String description;
 
-    public Section() {
+    public SectionEntity() {
     }
 
-    public Section(String name, String description) {
+    public SectionEntity(String name, String description) {
         this.name = name;
         this.description = description;
     }
@@ -51,7 +51,7 @@ public class Section implements Serializable{
 
     @Override
     public String toString() {
-        return "Section{" +
+        return "SectionEntity{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +

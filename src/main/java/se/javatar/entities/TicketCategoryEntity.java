@@ -8,40 +8,25 @@ import java.io.Serializable;
  */
 @SuppressWarnings("serial")
 @Entity
-public class Venue implements Serializable{
+public class TicketCategoryEntity implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private String name;
-
+    @Column(unique = true)
+    //@NotEmpty
     private String description;
 
-    @ManyToOne
-    private MediaItem mediaItem;
-
-    private Address address;
-
-    public Venue() {
+    public TicketCategoryEntity() {
     }
 
-    public Venue(String name, String description, Address address) {
-        this.name = name;
+    public TicketCategoryEntity(String description) {
         this.description = description;
-        this.address = address;
     }
 
     public Long getId() {
         return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public String getDescription() {
@@ -52,21 +37,12 @@ public class Venue implements Serializable{
         this.description = description;
     }
 
-    public Address getAddress() {
-        return address;
-    }
-
-    public void setAddress(Address address) {
-        this.address = address;
-    }
-
     @Override
-    public String toString() {
-        return "Venue{" +
+    public String
+    toString() {
+        return "TicketCategoryEntity{" +
                 "id=" + id +
-                ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
-                ", address=" + address +
                 '}';
     }
 }

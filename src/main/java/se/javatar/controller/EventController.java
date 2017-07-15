@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import se.javatar.entities.Event;
+import se.javatar.entities.EventEntity;
 import se.javatar.service.EventService;
 
 import java.util.List;
@@ -22,7 +22,7 @@ public class EventController {
     EventService eventService;
 
     @RequestMapping(value = "/get-all-events")
-    public List<Event> getAllEvents() {
+    public List<EventEntity> getAllEvents() {
         return eventService.getAllEvents();
     }
 

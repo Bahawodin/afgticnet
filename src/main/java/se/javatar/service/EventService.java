@@ -1,6 +1,6 @@
 package se.javatar.service;
 
-import se.javatar.entities.Event;
+import se.javatar.entities.EventEntity;
 
 import java.util.List;
 
@@ -9,11 +9,11 @@ import java.util.List;
  */
 public interface EventService {
 
-    List<Event> getAllEvents();
+    List<EventEntity> getAllEvents();
 
-    Event getEventById(Long id);
+    EventEntity getEventById(Long id);
 
-    void addEvent(Event event);
+    void addEvent(EventEntity eventEntity);
 
-    void updateEvent(Event event);
+    void updateEvent(EventEntity eventEntity);
 }

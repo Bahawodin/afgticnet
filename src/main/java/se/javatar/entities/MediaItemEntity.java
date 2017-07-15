@@ -11,7 +11,7 @@ import java.io.Serializable;
  */
 @SuppressWarnings("serial")
 @Entity
-public class MediaItem implements Serializable{
+public class MediaItemEntity implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -65,7 +65,7 @@ public class MediaItem implements Serializable{
             return false;
         if (getClass() != obj.getClass())
             return false;
-        MediaItem other = (MediaItem) obj;
+        MediaItemEntity other = (MediaItemEntity) obj;
         if (url == null) {
             if (other.url != null)
                 return false;

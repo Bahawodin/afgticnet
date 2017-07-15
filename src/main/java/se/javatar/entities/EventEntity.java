@@ -9,7 +9,7 @@ import java.io.Serializable;
  */
 @SuppressWarnings("serial")
 @Entity
-public class Event implements Serializable {
+public class EventEntity implements Serializable {
 
 
     @Id
@@ -21,7 +21,7 @@ public class Event implements Serializable {
     private String description;
 
     @ManyToOne
-    private MediaItem mediaItem;
+    private MediaItemEntity mediaItemEntity;
 
     @Enumerated(EnumType.STRING)
     private EventCategory eventCategory;
@@ -32,7 +32,7 @@ public class Event implements Serializable {
     /**
      * Default empty constructor
      */
-    public Event() {
+    public EventEntity() {
     }
 
     /**
@@ -40,7 +40,7 @@ public class Event implements Serializable {
      * @param name of the event
      * @param description of the event
      */
-    public Event(String name, String description) {
+    public EventEntity(String name, String description) {
         this.name = name;
         this.description = description;
     }
@@ -87,12 +87,12 @@ public class Event implements Serializable {
         this.description = description;
     }
 
-    public MediaItem getMediaItem() {
-        return mediaItem;
+    public MediaItemEntity getMediaItemEntity() {
+        return mediaItemEntity;
     }
 
-    public void setMediaItem(MediaItem mediaItem) {
-        this.mediaItem = mediaItem;
+    public void setMediaItemEntity(MediaItemEntity mediaItemEntity) {
+        this.mediaItemEntity = mediaItemEntity;
     }
 
     public EventCategory getEventCategory() {
@@ -105,7 +105,7 @@ public class Event implements Serializable {
 
     @Override
     public String toString() {
-        return "Event{" +
+        return "EventEntity{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +

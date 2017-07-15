@@ -3,8 +3,7 @@ package se.javatar.serviceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import se.javatar.dao.ShowDAO;
-import se.javatar.entities.Event;
-import se.javatar.entities.Show;
+import se.javatar.entities.ShowEntity;
 import se.javatar.service.ShowService;
 
 import java.util.ArrayList;
@@ -21,25 +20,25 @@ public class ShowServiceImpl implements ShowService{
 
 
     @Override
-    public List<Show> getAllShows() {
-        List<Show> shows = new ArrayList<>();
+    public List<ShowEntity> getAllShows() {
+        List<ShowEntity> showEntities = new ArrayList<>();
         showDAO.findAll()
-                .forEach(shows::add);
-        return shows;
+                .forEach(showEntities::add);
+        return showEntities;
     }
 
     @Override
-    public Show getShowById(Long id) {
+    public ShowEntity getShowById(Long id) {
         return showDAO.findOne(id);
     }
 
     @Override
-    public void addShow(Show show) {
-        showDAO.save(show);
+    public void addShow(ShowEntity showEntity) {
+        showDAO.save(showEntity);
     }
 
     @Override
-    public void updateShow(Show show) {
-        showDAO.save(show);
+    public void updateShow(ShowEntity showEntity) {
+        showDAO.save(showEntity);
     }
 }

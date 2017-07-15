@@ -8,7 +8,7 @@ import java.io.Serializable;
  */
 @SuppressWarnings("serial")
 @Embeddable
-public class Address implements Serializable {
+public class AddressEntity implements Serializable {
 
     private String street;
     private String city;
@@ -45,13 +45,13 @@ public class Address implements Serializable {
         if (o == null || getClass() != o.getClass())
             return false;
 
-        Address address = (Address) o;
+        AddressEntity addressEntity = (AddressEntity) o;
 
-        if (city != null ? !city.equals(address.city) : address.city != null)
+        if (city != null ? !city.equals(addressEntity.city) : addressEntity.city != null)
             return false;
-        if (country != null ? !country.equals(address.country) : address.country != null)
+        if (country != null ? !country.equals(addressEntity.country) : addressEntity.country != null)
             return false;
-        if (street != null ? !street.equals(address.street) : address.street != null)
+        if (street != null ? !street.equals(addressEntity.street) : addressEntity.street != null)
             return false;
 
         return true;

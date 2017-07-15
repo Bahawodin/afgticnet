@@ -10,8 +10,9 @@ import java.util.Objects;
 /**
  * @author Ajmal Bahawodin {@literal <mailto:ajmal@javatar.se/>}
  */
+@SuppressWarnings("serial")
 @Entity
-public class User implements Serializable {
+public class UserEntity implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -21,21 +22,23 @@ public class User implements Serializable {
 
     private String lastName;
 
-    private Address address;
+    private AddressEntity addressEntity;
+
+    private String email;
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof User)) return false;
-        User user = (User) o;
-        return Objects.equals(id, user.id) &&
-                Objects.equals(fisrtName, user.fisrtName) &&
-                Objects.equals(lastName, user.lastName) &&
-                Objects.equals(address, user.address);
+        if (!(o instanceof UserEntity)) return false;
+        UserEntity userEntity = (UserEntity) o;
+        return Objects.equals(id, userEntity.id) &&
+                Objects.equals(fisrtName, userEntity.fisrtName) &&
+                Objects.equals(lastName, userEntity.lastName) &&
+                Objects.equals(addressEntity, userEntity.addressEntity);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, fisrtName, lastName, address);
+        return Objects.hash(id, fisrtName, lastName, addressEntity);
     }
 }

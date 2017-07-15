@@ -5,11 +5,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import se.javatar.entities.Show;
+import se.javatar.entities.ShowEntity;
 import se.javatar.service.ShowService;
 import java.util.List;
-
-import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
 /**
  * @author Ajmal Bahawodin {@literal <mailto:ajmal@javatar.se/>}
@@ -22,16 +20,16 @@ public class ShowController {
     ShowService showService;
 
     @RequestMapping(value = "/get-all-shows")
-    public List<Show> getAllShows() {
+    public List<ShowEntity> getAllShows() {
         return showService.getAllShows();
     }
 
     @RequestMapping(value = "/add-show", method = RequestMethod.POST)
-    public void addShow(@RequestBody Show show) {
+    public void addShow(@RequestBody ShowEntity showEntity) {
 
-        System.out.println(show);
+        System.out.println(showEntity);
 
-        showService.addShow(show);
+        showService.addShow(showEntity);
     }
 
 }

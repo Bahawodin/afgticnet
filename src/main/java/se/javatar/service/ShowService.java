@@ -1,7 +1,6 @@
 package se.javatar.service;
 
-import se.javatar.entities.Event;
-import se.javatar.entities.Show;
+import se.javatar.entities.ShowEntity;
 
 import java.util.List;
 
@@ -10,13 +9,13 @@ import java.util.List;
  */
 public interface ShowService {
 
-    List<Show> getAllShows();
+    List<ShowEntity> getAllShows();
 
-    Show getShowById(Long id);
+    ShowEntity getShowById(Long id);
 
-    void addShow(Show show);
+    void addShow(ShowEntity showEntity);
 
-    void updateShow(Show show);
+    void updateShow(ShowEntity showEntity);
 
 
 }
