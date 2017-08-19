@@ -13,7 +13,7 @@ import java.util.List;
  * @author Ajmal Bahawodin {@literal <mailto:ajmal@javatar.se/>}
  */
 @Service
-public class ShowServiceImpl implements ShowService{
+public class ShowServiceImpl implements ShowService {
 
     @Autowired
     private ShowDAO showDAO;
@@ -41,4 +41,6 @@ public class ShowServiceImpl implements ShowService{
     public void updateShow(ShowEntity showEntity) {
         showDAO.save(showEntity);
     }
+
+
 }

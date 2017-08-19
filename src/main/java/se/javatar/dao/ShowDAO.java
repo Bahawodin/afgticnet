@@ -10,5 +10,5 @@ import java.util.List;
  */
 public interface ShowDAO extends CrudRepository<ShowEntity, Long> {
 
-    List<ShowEntity> findByEventId(Long id);
+    List<ShowEntity> findByEventEntityId(Long id);
 }

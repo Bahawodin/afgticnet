@@ -14,7 +14,7 @@ import static javax.persistence.TemporalType.TIMESTAMP;
  */
 @SuppressWarnings("serial")
 @Entity
-@Table(name="Appearance", uniqueConstraints = @UniqueConstraint(columnNames = { "event_entity_id", "venue_entity_id" }))
+@Table(uniqueConstraints = @UniqueConstraint(columnNames = { "event_entity_id", "venue_entity_id" }))
 public class ShowEntity implements Serializable {
 
     @Id
