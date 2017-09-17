@@ -6,5 +6,5 @@ import se.javatar.entities.EventEntity;
 /**
  * @author Ajmal Bahawodin {@literal <mailto:ajmal@javatar.se/>}
  */
-public interface EventDao extends CrudRepository<EventEntity, Long> {
+public interface EventDAO extends CrudRepository<EventEntity, Long> {
 }
