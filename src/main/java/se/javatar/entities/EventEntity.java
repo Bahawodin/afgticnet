@@ -26,9 +26,6 @@ public class EventEntity implements Serializable {
     @Enumerated(EnumType.STRING)
     private EventCategory eventCategory;
 
-
-
-
     /**
      * Default empty constructor
      */
