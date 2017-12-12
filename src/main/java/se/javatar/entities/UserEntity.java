@@ -1,5 +1,7 @@
 package se.javatar.entities;
 
+import org.hibernate.validator.constraints.Email;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -10,7 +12,6 @@ import java.util.Objects;
 /**
  * @author Ajmal Bahawodin {@literal <mailto:ajmal@javatar.se/>}
  */
-@SuppressWarnings("serial")
 @Entity
 public class UserEntity implements Serializable {
 
@@ -24,6 +25,7 @@ public class UserEntity implements Serializable {
 
     private AddressEntity addressEntity;
 
+    @Email
     private String email;
 
     @Override

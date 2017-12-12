@@ -12,7 +12,6 @@ import static javax.persistence.TemporalType.TIMESTAMP;
 /**
  * @author Ajmal Bahawodin {@literal <mailto:ajmal@javatar.se/>}
  */
-@SuppressWarnings("serial")
 @Entity
 @Table(uniqueConstraints = @UniqueConstraint(columnNames = { "event_entity_id", "venue_entity_id" }))
 public class ShowEntity implements Serializable {

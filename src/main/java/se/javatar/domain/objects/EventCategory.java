@@ -5,7 +5,24 @@ package se.javatar.domain.objects;
  */
 public enum EventCategory {
 
-    CONSERT,
-    SHOW,
-    BUFFE
+    CONSERT("Consert"),
+    SHOW("Show"),
+    BUFFE("Buffe");
+
+    private String name;
+
+    EventCategory() {
+    }
+
+    EventCategory(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }

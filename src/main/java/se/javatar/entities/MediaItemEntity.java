@@ -1,6 +1,5 @@
 package se.javatar.entities;
 
-import org.hibernate.validator.constraints.URL;
 import se.javatar.domain.objects.MediaType;
 
 import javax.persistence.*;
@@ -9,7 +8,6 @@ import java.io.Serializable;
 /**
  * @author Ajmal Bahawodin {@literal <mailto:ajmal@javatar.se/>}
  */
-@SuppressWarnings("serial")
 @Entity
 public class MediaItemEntity implements Serializable{
 
@@ -20,7 +18,7 @@ public class MediaItemEntity implements Serializable{
     @Enumerated(EnumType.STRING)
     private MediaType mediaType;
 
-    @URL
+    //@URL
     private String url;
 
 

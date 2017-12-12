@@ -6,7 +6,6 @@ import java.io.Serializable;
 /**
  * @author Ajmal Bahawodin {@literal <mailto:ajmal@javatar.se/>}
  */
-@SuppressWarnings("serial")
 @Embeddable
 public class AddressEntity implements Serializable {
 

@@ -9,7 +9,6 @@ import java.io.Serializable;
 /**
  * @author Ajmal Bahawodin {@literal <mailto:ajmal@javatar.se/>}
  */
-@SuppressWarnings("serial")
 @Entity
 // TODO Document @JsonIgnoreProperties
 @JsonIgnoreProperties("showEntity")

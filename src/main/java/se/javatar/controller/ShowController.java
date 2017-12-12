@@ -1,5 +1,6 @@
 package se.javatar.controller;
 
+import com.fasterxml.jackson.databind.JsonNode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,11 +27,11 @@ public class ShowController {
     }
 
     @RequestMapping(value = "/add-show", method = RequestMethod.POST)
-    public void addShow(@RequestBody ShowEntity showEntity) {
+    public void addShow(@RequestBody JsonNode showEntity) {
 
         System.out.println(showEntity);
 
-        showService.addShow(showEntity);
+       //showService.addShow(showEntity);
     }
 
 }

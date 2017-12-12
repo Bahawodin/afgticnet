@@ -19,8 +19,6 @@ public enum MediaType {
      */
     private final boolean cacheable;
 
-    /* Boilerplate constructor and getters */
-
     private MediaType(String description, boolean cacheable) {
         this.description = description;
         this.cacheable = cacheable;
